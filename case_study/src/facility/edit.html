@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facility Edit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<div>
+    <section class="vh-00 bg-image"
+             style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20210120/pngtree-green-simple-clean-background-image_536886.jpg');">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5">CHỈNH SỬA DỊCH VỤ</h2>
+                                <!--                                <form th:action="@{/facilities/update}" th:object="${facilityDto}" method="post">-->
+                                <div class="row" id="form">
+
+                                    <input type="hidden">
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-5 col-form-label">Loại dịch vụ:</label>
+                                        <div class="col-sm-6 mt-1 ">
+                                            <select class="form-control">
+                                                <option value="" selected>Chọn loại dịch vụ</option>
+                                                <option>Villa</option>
+                                                <option>House</option>
+                                                <option>Room</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mt-1 " id="name">
+                                        <label class="col-sm-5 col-form-label">Tên dịch vụ :</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mt-1 " id="area">
+                                        <label class="col-sm-5 col-form-label">Diện tích sử dụng:</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mt-1 " id="cost">
+                                        <label class="col-sm-5 col-form-label">Chi phí thuê:</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mt-1 " id="maxPeople">
+                                        <label class="col-sm-5 col-form-label">Số lượng người tối đa:</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mt-1 " id="standardRoom">
+                                        <label class="col-sm-5 col-form-label">Tiêu chuẩn phòng:</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mt-1 " id="desciption">
+                                        <label class="col-sm-5 col-form-label">Mô tả tiện nghi khác:</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mt-1 " id="poolArea">
+                                        <label class="col-sm-5 col-form-label">Diện tích hồ bơi:</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mt-1 " id="numberOfFloors">
+                                        <label class="col-sm-5 col-form-label">Số tầng:</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mt-1" id="facilityFrees">
+                                        <label class="col-sm-5 col-form-label">Dịch vụ miễn phí :</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mt-1 " id="rentType">
+                                        <label class="col-sm-5 col-form-label">Kiểu thuê:</label>
+                                        <div class="col-sm-6">
+                                            <select class="form-control">
+                                                <option>Chọn kiểu thuê</option>
+                                                <option value="">theo ngày</option>
+                                                <option value="">theo tháng</option>
+                                                <option value="">theo năm</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mt-2 " id="">
+                                        <div class="col-md-8"></div>
+                                        <div class="col-md-3">
+                                            <button type="submit"
+                                                    class="btn btn-success gradient-custom-4 ">
+                                                Lưu lại
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class=" button mt-3 ">
+                                        <p>
+                                            <a class="btn btn-outline-success gradient-custom-4 text-body">
+                                                Quay lại danh sách
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
