@@ -2,9 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Contract Create</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-$END$
+<div>
+    <section class="vh-00 bg-image"
+             style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20210120/pngtree-green-simple-clean-background-image_536886.jpg');">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-80">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5">THÊM MỚI HỢP ĐỒNG</h2>
+                                <div class="form-outline mb-4">
+                                    <span>Tên dịch vụ:</span>
+                                    <select class="form-control">
+                                        <option>--Chọn tên dịch vụ--</option>
+                                        <option value="1">Villa</option>
+                                        <option value="2">House</option>
+                                        <option value="3">Room</option>
+                                    </select>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label">Ngày bắt đầu: </label>
+                                    <input type="date" class="form-control form-control-lg"/>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label">Ngày kết thúc: </label>
+                                    <input type="date" class="form-control form-control-lg"/>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label">Số tiền đặt cọc: </label>
+                                    <input type="number" min="0" class="form-control form-control-lg"/>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <span>Tên khách hàng: </span>
+                                    <select class="form-control">
+                                        <option>--Chọn tên khách hàng--</option>
+                                        <option value="1">Nguyễn Thị Ánh</option>
+                                        <option value="2">Nguyễn Thị Bông</option>
+                                        <option value="3">Nguyễn Hoàng Minh</option>
+                                    </select>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <span>Tên nhân viên: </span>
+                                    <select class="form-control">
+                                        <option>--Chọn tên khách hàng--</option>
+                                        <option value="1">Nguyễn Minh Ân</option>
+                                        <option value="2">Hoàng Văn Quý</option>
+                                        <option value="3">Nguyễn Thùy Minh</option>
+                                    </select>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit"
+                                            class="btn btn-success gradient-custom-4 text-body">
+                                        Thêm mới
+                                    </button>
+                                </div>
+                                <div class=" button mt-3 ">
+                                    <p>
+                                        <a class="btn btn-outline-success gradient-custom-4 text-body ">
+                                            Quay lại danh sách
+                                        </a>
+                                    </p>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 </body>
 </html>
