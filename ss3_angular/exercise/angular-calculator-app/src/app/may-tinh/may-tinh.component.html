@@ -1,0 +1,17 @@
+<h1>ỨNG DỤNG MÁY TÍNH ĐƠN GIẢN</h1>
+<label>Number 1: </label>
+<input [(ngModel)]="temp.number1">
+<br>
+
+<label>Number 2: </label>
+<input [(ngModel)]="temp.number2">
+<br>
+
+<select #target (change)="changeCalculator(target.value)">Chọn phép tính
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+
+<p>Kết quả: {{temp.result}}</p>
