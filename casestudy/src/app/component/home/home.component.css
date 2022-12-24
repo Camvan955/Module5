@@ -1,0 +1,40 @@
+/*body {*/
+/*  padding: 2%;*/
+/*  text-align: center;*/
+/*}*/
+
+/*#slideshow {*/
+/*  overflow: hidden;*/
+/*  height: 650px;*/
+/*  width: 910px;*/
+/*  margin: 0 auto;*/
+/*}*/
+
+/*.slide-wrapper {*/
+/*  width: 2912px;*/
+/*  -webkit-animation: slide 1s ease infinite;*/
+/*}*/
+
+/*.slide {*/
+/*  float: left;*/
+/*  height: 810px;*/
+/*  width: 910px;*/
+/*}*/
+
+/*@-webkit-keyframes slide {*/
+/*  20% {*/
+/*    margin-left: 0px;*/
+/*  }*/
+/*  30% {*/
+/*    margin-left: -910px;*/
+/*  }*/
+/*  50% {*/
+/*    margin-left: -910px;*/
+/*  }*/
+/*  60% {*/
+/*    margin-left: -1820px;*/
+/*  }*/
+/*  80% {*/
+/*    margin-left: -1820px;*/
+/*  }*/
+/*}*/
