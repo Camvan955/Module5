@@ -38,7 +38,7 @@ export class ListFacilityComponent implements OnInit {
       numberOfFloor: 2,
       maxPeople: 7,
       cost: 4500000,
-      poolArea: 100,
+      poolArea: 70,
       renType: {id: 2, name: 'ngay', price: 3000000},
       standardRoom: 'abccccc'
     }
