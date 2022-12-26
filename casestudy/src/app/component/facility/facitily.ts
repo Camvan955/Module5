@@ -1,6 +1,7 @@
 import {RenType} from './ren-type';
 
 export interface Facitily {
+  image: string;
   id: number;
   name: string;
   area: number;
