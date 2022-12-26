@@ -7,9 +7,14 @@ import { HomeComponent } from './component/home/home.component';
 import { HeaderComponent } from './component/layout/header/header.component';
 import { NavigationComponent } from './component/layout/navigation/navigation.component';
 import { FooterComponent } from './component/layout/footer/footer.component';
-import { ListComponent } from './component/facility/list/list.component';
-import { EditComponent } from './component/facility/edit/edit.component';
-import { CreateComponent } from './component/facility/create/create.component';
+import { CreateContractComponent } from './component/contract/create-contract/create-contract.component';
+import { ListContractComponent } from './component/contract/list-contract/list-contract.component';
+import { EditCustomerComponent } from './component/customer/edit-customer/edit-customer.component';
+import { CreateFacilityComponent } from './component/facility/create-facility/create-facility.component';
+import { EditFacilityComponent } from './component/facility/edit-facility/edit-facility.component';
+import { ListFacilityComponent } from './component/facility/list-facility/list-facility.component';
+import { CreateCustomerComponent } from './component/customer/create-customer/create-customer.component';
+import { ListCustomerComponent } from './component/customer/list-customer/list-customer.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +23,14 @@ import { CreateComponent } from './component/facility/create/create.component';
     HeaderComponent,
     NavigationComponent,
     FooterComponent,
-    ListComponent,
-    EditComponent,
-    CreateComponent
+    CreateContractComponent,
+    ListContractComponent,
+    EditCustomerComponent,
+    CreateFacilityComponent,
+    EditFacilityComponent,
+    ListFacilityComponent,
+    CreateCustomerComponent,
+    ListCustomerComponent,
   ],
   imports: [
     BrowserModule,
