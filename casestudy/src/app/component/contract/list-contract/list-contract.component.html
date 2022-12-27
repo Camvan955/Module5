@@ -1,10 +1,10 @@
-<h1 style="text-align: center ; margin-top: 20px">Danh Sách Khách Hàng</h1>
+<h1 style="text-align: center ; margin-top: 40px">DANH SÁCH HỢP ĐỒNG</h1>
 
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-10">
-    <table class="table table-success table-hover">
-      <tr></tr>
+    <table class="table table-success table-hover mt-5">
+      <thead>
       <tr>
         <th> #</th>
         <th>Tên dịch vụ</th>
@@ -13,8 +13,27 @@
         <th>Ngày kết thúc</th>
         <th>Tiền đặt cọc</th>
         <th>Tổng tiền</th>
-        <th>Các dịch vụ đi kèm</th>
+        <th colspan="2">Gói dịch vụ đi kèm</th>
+        <!--        <th>Các dịch vụ đi kèm</th>-->
       </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of contracts">
+        <td>{{item.id}}</td>
+        <td>{{item.idFacility.name}}</td>
+        <td>{{item.idCustomer.name}}</td>
+        <td>{{item.dateStart}}</td>
+        <td>{{item.dateEnd }}</td>
+        <td>{{item.deposit | currency: "VNĐ"}}</td>
+        <td>{{item.totalPay | currency: "VNĐ"}}</td>
+        <td>
+          <button class="btn btn-primary btn-rounded">+</button>
+        </td>
+        <td>
+          <button class="btn btn-primary btn-rounded">Danh sách dịch vụ đi kèm</button>
+        </td>
+      </tr>
+      </tbody>
     </table>
   </div>
   <div class=" col-md-1">
