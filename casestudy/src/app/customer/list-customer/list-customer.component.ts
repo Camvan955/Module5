@@ -10,7 +10,7 @@ import {Customer} from '../customer';
 export class ListCustomerComponent implements OnInit {
   customers: Customer[] = [
     {
-      id: 1,
+      id: "KH-0001",
       customerType: {id: 1, name: "Diamond"},
       name: 'Nguyễn Thị Cẩm Vân',
       dateOfBirth: "08/01/1999",
@@ -20,7 +20,7 @@ export class ListCustomerComponent implements OnInit {
       address:"Tứ Hạ, Hương Trà, Thừa Thiên Huế"
     },
     {
-      id: 2,
+      id: "KH-0002",
       customerType: {id: 2, name: "Member"},
       name: 'Lê Đức Anh',
       dateOfBirth: "01/01/1999",
@@ -30,7 +30,7 @@ export class ListCustomerComponent implements OnInit {
       address:"Hương Văn, Hương Trà, Thừa Thiên Huế"
     },
     {
-      id: 2,
+      id: "KH-0003",
       customerType: {id: 3, name: "Gold"},
       name: 'Lê Bảo Khánh',
       dateOfBirth: "27/07/2000",

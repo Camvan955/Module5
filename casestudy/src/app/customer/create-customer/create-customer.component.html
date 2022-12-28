@@ -1,0 +1,106 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+
+<section class="vh-00 bg-image"
+         style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20210120/pngtree-green-simple-clean-background-image_536886.jpg');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px">
+            <form [formGroup]="creatForm" (ngSubmit)="saveCustomer()" novalidate>
+
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">THÊM MỚI KHÁCH HÀNG</h2>
+                <div class="row" id="form">
+                  <p>
+                    <a class="btn btn-outline-success btn-block gradient-custom-4 text-body">
+                      Quay lại danh sách
+                    </a>
+                  </p>
+                  <div class="col-lg-12">
+                    <div class="col-lg-12 form-outline mb-4">
+                      <span for="customerType">Mã khách hàng: </span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.id.hasError('required') && creatForm.controls.id.touched "> Mã khách hàng không được để trống!</span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.id.hasError('pattern') && creatForm.controls.id.touched "> Mã khách hàng phải đúng định dạng!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="id"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span for="name">Tên khách hàng: </span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.name.hasError('required') && creatForm.controls.name.touched && creatForm.controls.name.dirty">Tên khách hàng không được để trống!</span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.name.hasError('pattern') && creatForm.controls.name.touched && creatForm.controls.name.dirty">Tên khách hàng không đúng định dạng </span>
+                      <input type="text" class="form-control form-control-lg" formControlName="name"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="customerType">Loại khách: </label>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.customerType.hasError('required') && creatForm.controls.customerType.touched">Vui lòng chọn loại khách hàng</span>
+                      <div class="input-group">
+                        <select style="height: 49px" id="customerType" class="form-select"
+                                formControlName="customerType">
+                          <option value="">Chọn loại khách hàng</option>
+                          <option [ngValue]="c.name" *ngFor="let c of customerTypeList">
+                            {{c.name}}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <label class="form-label" for="form3Example4cg">Ngày sinh: </label>
+                      <div class="form-outline mb-4">
+                        <input type="date" id="form3Example4cg" class="form-control form-control-lg"/>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Số CMND: </span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.idCard.hasError('required') && creatForm.controls.idCard.touched &&creatForm.controls.idCard.dirty ">Số CMND không được để trống!</span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.idCard.hasError('pattern') && creatForm.controls.idCard.touched &&creatForm.controls.idCard.dirty ">Số CMND không đúgn địng dạng!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="idCard"/>
+                    </div>
+                    <div>
+                      <span class="form-label">Số điện thoại: </span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.phoneNumber.hasError('required') && creatForm.controls.phoneNumber.touched &&creatForm.controls.phoneNumber.dirty ">Số điện thoại không được để trống!</span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.phoneNumber.hasError('pattern') && creatForm.controls.phoneNumber.touched &&creatForm.controls.phoneNumber.dirty ">Số điện thoại không đúng địng dạng!</span>
+                      <div class="form-outline mb-4">
+                        <input type="text"
+                               class="form-control form-control-lg" formControlName="phoneNumber"/>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Email: </span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.email.hasError('required') && creatForm.controls.email.touched &&creatForm.controls.email.dirty ">Email không được để trống!</span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.email.hasError('email') && creatForm.controls.email.touched &&creatForm.controls.email.dirty ">Email không đúng địng dạng!</span>
+
+                      <input type="text" class="form-control form-control-lg" formControlName="email"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Địa chỉ: </span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.address.hasError('required') && creatForm.controls.address.touched &&creatForm.controls.address.dirty ">Địa chỉ không được để trống!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="address"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <input class="btn btn-success btn-block gradient-custom-4 text-body" type="submit" [disabled]="!creatForm.valid" value="Thêm mới">
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

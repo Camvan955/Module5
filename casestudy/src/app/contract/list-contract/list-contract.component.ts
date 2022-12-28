@@ -15,7 +15,7 @@ export class ListContractComponent implements OnInit {
     {
       id: 1,
       idEmployee: {id: 1, name: 'Phan Thùy Nhung'},
-      idCustomer: {id: 1, name: 'Lê Mỹ Uyên', customerType:{id: 1}},
+      idCustomer: {id: "KH-0001", name: 'Lê Mỹ Uyên', customerType:{id: 1}},
       idFacility: {id: 1, name: 'Room Luxury'},
       dateStart: '12/12/2022',
       dateEnd: '13/12/2022',
@@ -25,7 +25,7 @@ export class ListContractComponent implements OnInit {
     {
       id: 1,
       idEmployee: {id: 1, name: 'Nguyễn Tư Quang'},
-      idCustomer: {id: 1, name: 'Lê Thanh Thúy', customerType:{id: 2}},
+      idCustomer: {id: "KH-0002", name: 'Lê Thanh Thúy', customerType:{id: 2}},
       idFacility: {id: 1, name: 'Villa Luxury'},
       dateStart: '12/12/2022',
       dateEnd: '13/12/2022',
@@ -35,7 +35,7 @@ export class ListContractComponent implements OnInit {
     {
       id: 1,
       idEmployee: {id: 1, name: 'Nguyễn Như Quỳnh'},
-      idCustomer: {id: 1, name: 'Trần Hoàng Đạt', customerType:{id: 3}},
+      idCustomer: {id: "KH-0003", name: 'Trần Hoàng Đạt', customerType:{id: 3}},
       idFacility: {id: 1, name: 'Room Luxury'},
       dateStart: '12/12/2022',
       dateEnd: '13/12/2022',
