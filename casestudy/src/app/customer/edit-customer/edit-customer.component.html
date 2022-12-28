@@ -11,7 +11,7 @@
             <form [formGroup]="editForm" (ngSubmit)="editCustomer()" novalidate>
 
               <div class="card-body p-5">
-                <h2 class="text-uppercase text-center mb-5">THÊM MỚI KHÁCH HÀNG</h2>
+                <h2 class="text-uppercase text-center mb-5">CHỈNH SỬA KHÁCH HÀNG</h2>
                 <div class="row" id="form">
                   <p>
                     <a class="btn btn-outline-success btn-block gradient-custom-4 text-body">
@@ -93,7 +93,7 @@
                 </div>
                 <div class="d-flex justify-content-center">
                   <input class="btn btn-success btn-block gradient-custom-4 text-body" type="submit"
-                         [disabled]="!editForm.valid" value="Thêm mới">
+                         [disabled]="!editForm.valid" value="Lưu">
                 </div>
               </div>
             </form>
