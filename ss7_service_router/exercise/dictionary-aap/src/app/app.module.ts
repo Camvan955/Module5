@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TimelinesComponent } from './timelines/timelines.component';
+import { DictionaryDetailComponent } from './dictionary/dictionary-detail/dictionary-detail.component';
+import { DictionaryPageComponent } from './dictionary/dictionary-page/dictionary-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TimelinesComponent
+    DictionaryDetailComponent,
+    DictionaryPageComponent
   ],
   imports: [
     BrowserModule,
