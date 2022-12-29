@@ -1,89 +1,96 @@
-<div>
-  <section class="vh-00 bg-image"
-           style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20210120/pngtree-green-simple-clean-background-image_536886.jpg');">
-    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-      <div class="container h-100">
-        <div class="row d-flex justify-content-center align-items-center h-80">
-          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-            <div class="card" style="border-radius: 15px;">
+<app-header></app-header>
+<app-navigation></app-navigation>
+
+<section class="vh-00 bg-image"
+         style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20210120/pngtree-green-simple-clean-background-image_536886.jpg');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px">
+            <form [formGroup]="createFacilityForm" (ngSubmit)="saveFacility()">
+
               <div class="card-body p-5">
                 <h2 class="text-uppercase text-center mb-5">THÊM MỚI DỊCH VỤ</h2>
-                <div class="form-outline mb-4">
-                  <span>Tên dịch vụ:</span>
-                  <select class="form-control">
-                    <option>--Chọn tên dịch vụ--</option>
-                    <option value="1">Villa</option>
-                    <option value="2">House</option>
-                    <option value="3">Room</option>
-                  </select>
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label">Diện tích sử dụng: </label>
-                  <input type="text" min="0" class="form-control form-control-lg"/>
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label">Chi phí thuê: </label>
-                  <input type="text" min="0" class="form-control form-control-lg"/>
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label">Số lượng người tối đa: </label>
-                  <input type="number" min="0" class="form-control form-control-lg"/>
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label">Kiểu thuê:
-                    <select class="form-control">
-                      <option value=-1>-- Chọn kiểu thuê --</option>
-                      <option value="1">Năm</option>
-                      <option value="2">Tháng</option>
-                      <option value="3">Ngày</option>
-                      <option value="4">Giờ</option>
-                    </select>
-                  </label>
-                </div>
-                <div class="form-outline mb-4" id="stand">
-                  <label class="form-label">Tiêu chuẩn phòng: </label>
-                  <select class="form-control">
-                    <option value="0">-- Chọn tiêu chuẩn phòng --</option>
-                    <option value="'Nomal'">Nomal</option>
-                    <option value="'VIP'">VIP</option>
-                    <option value="'Standar'">Standar</option>
-
-                  </select>
-                </div>
-                <div class="form-outline mb-4" id="descrip">
-                  <label class="form-label">Tiện nghi khác: </label>
-                  <input type="text" class="form-control form-control-lg"/>
-                </div>
-                <div class="form-outline mb-4" id="areaa">
-                  <label class="form-label">Diện tích hồ bơi: </label>
-                  <input type="text" min="0" class="form-control form-control-lg"/>
-                </div>
-                <div class="form-outline mb-4" id="floor">
-                  <label class="form-label">Số tầng: </label>
-                  <input type="number" min="0" class="form-control form-control-lg"/>
-                </div>
-                <div class="form-outline mb-4" id="free">
-                  <label class="form-label">Dịch vụ miễn phí: </label>
-                  <input type="text" class="form-control form-control-lg"/>
-                </div>
-                <div class="d-flex justify-content-center">
-                  <button type="submit"
-                          class="btn btn-success gradient-custom-4 text-body">
-                    Thêm mới
-                  </button>
-                </div>
-                <div class=" button mt-3 ">
+                <div class="row" id="form">
                   <p>
-                    <a class="btn btn-outline-success gradient-custom-4 text-body ">
+                    <a class="btn btn-outline-success btn-block gradient-custom-4 text-body">
                       Quay lại danh sách
                     </a>
                   </p>
+                  <div class="col-lg-12">
+                    <div class="form-outline mb-4">
+                      <span for="name">Mã dịch vụ: </span>
+                      <span style="color: red"
+                            *ngIf="createFacilityForm.controls.id.hasError('required') && createFacilityForm.controls.id.touched "> Mã dịch vụ không được để trống!</span>
+                      <span style="color: red"
+                            *ngIf="createFacilityForm.controls.id.hasError('pattern') && createFacilityForm.controls.id.touched "> Mã dịch vụ phải đúng định dạng!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="id"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span for="name">Tên dịch vụ: </span>
+                      <span style="color: red"
+                            *ngIf="createFacilityForm.controls.name.hasError('required') && createFacilityForm.controls.name.touched "> Tên dịch vụ không được để trống!</span>
+                      <span style="color: red"
+                            *ngIf="createFacilityForm.controls.name.hasError('pattern') && createFacilityForm.controls.name.touched "> Tên dịch vụ phải đúng định dạng!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="name"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="customerType">Kiểu thuê: </label>
+                      <div class="input-group">
+                        <select style="height: 49px" id="customerType" class="form-select"
+                                formControlName="renType">
+                          <option [ngValue]="c.name" *ngFor="let c of renTypeList">
+                            {{c.name}}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Diện tích: </span>
+                      <span style="color: red"
+                            *ngIf="createFacilityForm.controls.area.hasError('required') && createFacilityForm.controls.area.touched "> Diện tích không được để trống!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="area"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Số tầng: </span>
+                      <span style="color: red"
+                            *ngIf="createFacilityForm.controls.numberOfFloor.hasError('required') && createFacilityForm.controls.numberOfFloor.touched "> Diện tích không được để trống!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="numberOfFloor"/>
+                    </div>
+                    <div>
+                      <span class="form-label">Số người tối đa: </span>
+                      <span style="color: red"
+                            *ngIf="createFacilityForm.controls.maxPeople.hasError('required') && createFacilityForm.controls.maxPeople.touched "> Số người tối đa không được để trống!</span>
+                      <div class="form-outline mb-4">
+                        <input type="text"
+                               class="form-control form-control-lg" formControlName="maxPeople"/>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Chi phí thuê: </span>
+                      <span style="color: red"
+                            *ngIf="createFacilityForm.controls.cost.hasError('required') && createFacilityForm.controls.cost.touched "> Chi phí không được để trống!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="cost"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Diện tích bể bơi: </span>
+                      <span style="color: red"
+                            *ngIf="createFacilityForm.controls.poolArea.hasError('required') && createFacilityForm.controls.poolArea.touched "> Diện tích bể bơi không được để trống!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="poolArea"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <input class="btn btn-success btn-block gradient-custom-4 text-body" type="submit"
+                         [disabled]="!createFacilityForm.valid" value="Thêm mới">
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
+<app-footer></app-footer>

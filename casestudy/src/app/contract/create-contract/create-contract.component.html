@@ -1,70 +1,75 @@
-<div>
-  <section class="vh-00 bg-image"
-           style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20210120/pngtree-green-simple-clean-background-image_536886.jpg');">
-    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-      <div class="container h-100">
-        <div class="row d-flex justify-content-center align-items-center h-80">
-          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-            <div class="card" style="border-radius: 15px;">
+<app-header></app-header>
+<app-navigation></app-navigation>
+
+<section class="vh-00 bg-image"
+         style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20210120/pngtree-green-simple-clean-background-image_536886.jpg');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px">
+            <form [formGroup]="formContractCreate" (ngSubmit)="saveContract()">
+
               <div class="card-body p-5">
-                <h2 class="text-uppercase text-center mb-5">THÊM MỚI HỢP ĐỒNG</h2>
-                <div class="form-outline mb-4">
-                  <span>Tên dịch vụ:</span>
-                  <select class="form-control">
-                    <option>--Chọn tên dịch vụ--</option>
-                    <option value="1">Villa</option>
-                    <option value="2">House</option>
-                    <option value="3">Room</option>
-                  </select>
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label">Ngày bắt đầu: </label>
-                  <input type="date" class="form-control form-control-lg"/>
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label">Ngày kết thúc: </label>
-                  <input type="date" class="form-control form-control-lg"/>
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label">Số tiền đặt cọc: </label>
-                  <input type="number" min="0" class="form-control form-control-lg"/>
-                </div>
-                <div class="form-outline mb-4">
-                  <span>Tên khách hàng: </span>
-                  <select class="form-control">
-                    <option>--Chọn tên khách hàng--</option>
-                    <option value="1">Nguyễn Thị Ánh</option>
-                    <option value="2">Nguyễn Thị Bông</option>
-                    <option value="3">Nguyễn Hoàng Minh</option>
-                  </select>
-                </div>
-                <div class="form-outline mb-4">
-                  <span>Tên nhân viên: </span>
-                  <select class="form-control">
-                    <option>--Chọn tên khách hàng--</option>
-                    <option value="1">Nguyễn Minh Ân</option>
-                    <option value="2">Hoàng Văn Quý</option>
-                    <option value="3">Nguyễn Thùy Minh</option>
-                  </select>
-                </div>
-                <div class="d-flex justify-content-center">
-                  <button type="submit"
-                          class="btn btn-success gradient-custom-4 text-body">
-                    Thêm mới
-                  </button>
-                </div>
-                <div class=" button mt-3 ">
+                <h2 class="text-uppercase text-center mb-5">THÊM MỚI DỊCH VỤ</h2>
+                <div class="row" id="form">
                   <p>
-                    <a class="btn btn-outline-success gradient-custom-4 text-body ">
+                    <a class="btn btn-outline-success btn-block gradient-custom-4 text-body">
                       Quay lại danh sách
                     </a>
                   </p>
+                  <div class="col-lg-12">
+                    <div class="form-outline mb-4">
+                      <span for="name">Mã hợp đồng: </span>
+                      <span style="color: red"
+                            *ngIf="formContractCreate.controls.id.hasError('required') && formContractCreate.controls.id.touched "> Mã hợp đồng không được để trống!</span>
+                      <span style="color: red"
+                            *ngIf="formContractCreate.controls.id.hasError('pattern') && formContractCreate.controls.id.touched "> Mã hợp đồng phải đúng định dạng!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="id"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span for="name">Tên khách hàng: </span>
+                      <input type="text" class="form-control form-control-lg" formControlName="idCustomer"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Ngày bắt đầu: </span>
+                      <span style="color: red"
+                            *ngIf="formContractCreate.controls.dateStart.hasError('required') && formContractCreate.controls.dateStart.touched "> Ngày bắt đầu không được để trống!</span>
+                      <input type="date" class="form-control form-control-lg" formControlName="dateStart"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Ngày kết thúc: </span>
+                      <span style="color: red"
+                            *ngIf="formContractCreate.controls.dateEnd.hasError('required') && formContractCreate.controls.dateEnd.touched "> Ngày kết thúc không được để trống!</span>
+                      <input type="date" class="form-control form-control-lg" formControlName="dateEnd"/>
+                    </div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Số tiền đạt cọc: </span>
+                      <span style="color: red"
+                            *ngIf="formContractCreate.controls.deposit.hasError('required') && formContractCreate.controls.deposit.touched "> Số tiền đặt cọc không được để trống!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="deposit"/>
+                    </div>
+                    <div>
+                      <span class="form-label">Tổng tiền: </span>
+                      <span style="color: red"
+                            *ngIf="formContractCreate.controls.totalPay.hasError('required') && formContractCreate.controls.totalPay.touched "> Tổng số tiền không được để trống!</span>
+                      <div class="form-outline mb-4">
+                        <input type="text"
+                               class="form-control form-control-lg" formControlName="totalPay"/>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <input class="btn btn-success btn-block gradient-custom-4 text-body" type="submit"
+                               [disabled]="!formContractCreate.valid" value="Thêm mới">
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
+<app-footer></app-footer>
