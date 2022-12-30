@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ProduceService} from '../../service/produce.service';
 import {Route} from '@angular/router';
 import {Product} from '../../model/product';
@@ -9,9 +9,10 @@ import {Product} from '../../model/product';
   styleUrls: ['./product-delete.component.css']
 })
 export class ProductDeleteComponent implements OnInit {
-
+  @Output()
+  emiter = new EventEmitter();
   @Input()
-  product: Product = {};
+  product: Product = {category: {id: 0, name: ''}};
 
   constructor(private produceService: ProduceService) {
   }
@@ -20,7 +21,9 @@ export class ProductDeleteComponent implements OnInit {
   }
 
   deleteProduct() {
-    this.produceService.deleteById(this.product.id);
+    this.produceService.deleteById(this.product.id).subscribe(date=>{
+      this.emiter.emit("hello")
+    });
     document.getElementById('exampleModal')?.click();
   }
 }

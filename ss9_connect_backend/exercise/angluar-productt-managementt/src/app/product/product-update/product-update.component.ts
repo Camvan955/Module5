@@ -10,7 +10,7 @@ import {Product} from '../../model/product';
   styleUrls: ['./product-update.component.css']
 })
 export class ProductUpdateComponent implements OnInit {
-  product: Product = {};
+  product: Product = {category: {id: 0, name: ''}};
   productForm: FormGroup = new FormGroup({
     id: new FormControl(),
     name: new FormControl(),
@@ -37,9 +37,9 @@ export class ProductUpdateComponent implements OnInit {
   }
 
   updateProduct() {
-    this.product = this.productForm.value;
-    this.produceService.updateById(this.product);
-    this.productForm.reset();
-    alert("Chỉnh sửa thành công!")
+    // this.product = this.productForm.value;
+    // this.produceService.updateById(this.product);
+    // this.productForm.reset();
+    // alert("Chỉnh sửa thành công!")
   }
 }

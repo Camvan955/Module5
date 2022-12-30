@@ -8,22 +8,28 @@ import {Product} from '../../model/product';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  temp: Product = {};
+  temp: Product = {category: {id: 0, name: ''}};
   products: Product[] = [];
 
   constructor(private produceService: ProduceService) {
+    this.produceService.getAll().subscribe(data=>{
+      this.products = data;
+    },error => {}, ()=>{})
 
   }
 
   ngOnInit(): void {
-    this.getAll();
+
   }
 
-  getAll() {
-    this.products = this.produceService.getAll();
-  }
 
   editProduct() {
 
+  }
+
+  reload() {
+    this.produceService.getAll().subscribe(data=>{
+      this.products = data;
+    },error => {}, ()=>{})
   }
 }

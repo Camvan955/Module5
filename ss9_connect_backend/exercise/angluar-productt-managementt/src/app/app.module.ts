@@ -8,6 +8,7 @@ import {ProductCreateComponent} from './product/product-create/product-create.co
 import {ReactiveFormsModule} from '@angular/forms';
 import {ProductDeleteComponent} from './product/product-delete/product-delete.component';
 import {ProductUpdateComponent} from './product/product-update/product-update.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {ProductUpdateComponent} from './product/product-update/product-update.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

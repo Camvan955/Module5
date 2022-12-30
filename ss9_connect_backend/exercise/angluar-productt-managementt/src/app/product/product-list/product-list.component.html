@@ -7,6 +7,7 @@
     <td>Tên</td>
     <td>Giá</td>
     <td>Mô tả</td>
+    <td>Thể loại</td>
     <td>Chỉnh sửa</td>
     <td>Xóa</td>
   </tr>
@@ -17,9 +18,10 @@
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
+    <td>{{product.category.name}}</td>
     <td><button  class="btn btn-primary" [routerLink]="['/product/update',product.id]">Chỉnh sửa</button></td>
     <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"(click)="temp = product">Xóa</button></td>
   </tr>
   </tbody>
 </table>
-<app-product-delete [product]="temp"></app-product-delete>
+<app-product-delete [product]="temp" (emiter)="reload()" ></app-product-delete>

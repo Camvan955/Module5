@@ -13,6 +13,7 @@ export class ProductCreateComponent implements OnInit {
     name: new FormControl(),
     price: new FormControl(),
     description: new FormControl(),
+    category: new FormControl()
   });
 
   constructor(private  produceService: ProduceService) {
@@ -22,8 +23,8 @@ export class ProductCreateComponent implements OnInit {
   }
 
   submit() {
-    const product = this.productForm.value;
-    this.produceService.saveProduce(product);
-    this.productForm.reset();
+    // const product = this.productForm.value;
+    // this.produceService.saveProduce(product);
+    // this.productForm.reset();
   }
 }
