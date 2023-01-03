@@ -9,30 +9,34 @@
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px">
             <form [formGroup]="editForm" (ngSubmit)="editCustomer()" novalidate>
-
               <div class="card-body p-5">
                 <h2 class="text-uppercase text-center mb-5">CHỈNH SỬA KHÁCH HÀNG</h2>
                 <div class="row" id="form">
                   <p>
-                    <a class="btn btn-outline-success btn-block gradient-custom-4 text-body">
+                    <button class="btn btn-outline-success btn-block gradient-custom-4 text-body" routerLink="/customer">
                       Quay lại danh sách
-                    </a>
+                    </button>
                   </p>
                   <div class="col-lg-12">
+                    <div hidden>
+                      <input type="text" class="form-control form-control-lg" formControlName="id"/>
+                    </div>
                     <div class="col-lg-12 form-outline mb-4">
                       <span for="customerType">Mã khách hàng: </span>
                       <span style="color: red"
-                            *ngIf="editForm.controls.id.hasError('required') && editForm.controls.id.touched "> Mã khách hàng không được để trống!</span>
+                            *ngIf="editForm.controls.code.hasError('required') && editForm.controls.code.touched "> Mã khách hàng không được để trống!</span>
                       <span style="color: red"
-                            *ngIf="editForm.controls.id.hasError('pattern') && editForm.controls.id.touched "> Mã khách hàng phải đúng định dạng!</span>
-                      <input type="text" class="form-control form-control-lg" formControlName="id"/>
+                            *ngIf="editForm.controls.code.hasError('pattern') && editForm.controls.code.touched "> Mã khách hàng phải đúng định dạng!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="code"/>
                     </div>
                     <div class="form-outline mb-4">
                       <span for="name">Tên khách hàng: </span>
                       <span style="color: red"
                             *ngIf="editForm.controls.name.hasError('required') && editForm.controls.name.touched && editForm.controls.name.dirty">Tên khách hàng không được để trống!</span>
                       <span style="color: red"
-                            *ngIf="editForm.controls.name.hasError('pattern') && editForm.controls.name.touched && editForm.controls.name.dirty">Tên khách hàng không đúng định dạng </span>
+                            *ngIf="editForm.controls.name.hasError('minLength')">Tên khách hàng chứa ít nhất 5 kí tự </span>
+                      <span style="color: red"
+                            *ngIf="editForm.controls.name.hasError('maxLength')">Tên khách hàng không quá 50 kí tự </span>
                       <input type="text" class="form-control form-control-lg" formControlName="name"/>
                     </div>
                     <div class="form-outline mb-4">
@@ -41,9 +45,9 @@
                             *ngIf="editForm.controls.customerType.hasError('required') && editForm.controls.customerType.touched">Vui lòng chọn loại khách hàng</span>
                       <div class="input-group">
                         <select style="height: 49px" id="customerType" class="form-select"
-                                formControlName="customerType">
+                                formControlName="customerType" [compareWith]="compareWith">
                           <option value="">Chọn loại khách hàng</option>
-                          <option [ngValue]="c.name" *ngFor="let c of customerTypeList">
+                          <option [ngValue]="c" *ngFor="let c of customerType">
                             {{c.name}}
                           </option>
                         </select>

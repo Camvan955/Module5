@@ -9,6 +9,30 @@
         "id": 1,
         "name": "Điện thoại"
       }
+    },
+    {
+      "id": 2,
+      "name": "hihi",
+      "price": 43,
+      "description": "gdf",
+      "category": {
+        "id": 4,
+        "name": "Máy tính bảng"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Phụ Kiện"
+    },
+    {
+      "id": 2,
+      "name": "Điện thoại"
+    },
+    {
+      "id": 4,
+      "name": "Máy tính bảng"
     }
   ],
   "comments": [

@@ -14,27 +14,31 @@
                 <h2 class="text-uppercase text-center mb-5">THÊM MỚI KHÁCH HÀNG</h2>
                 <div class="row" id="form">
                   <p>
-                    <a class="btn btn-outline-success btn-block gradient-custom-4 text-body">
-                      Quay lại danh sách
-                    </a>
+                    <button class="btn btn-outline-success" routerLink="/customer">Danh sách khách hàng</button>
                   </p>
                   <div class="col-lg-12">
                     <div class="col-lg-12 form-outline mb-4">
                       <span for="customerType">Mã khách hàng: </span>
                       <span style="color: red"
-                            *ngIf="creatForm.controls.id.hasError('required') && creatForm.controls.id.touched "> Mã khách hàng không được để trống!</span>
+                            *ngIf="creatForm.controls.code.hasError('required') && creatForm.controls.code.touched "> Mã khách hàng không được để trống!</span>
                       <span style="color: red"
-                            *ngIf="creatForm.controls.id.hasError('pattern') && creatForm.controls.id.touched "> Mã khách hàng phải đúng định dạng!</span>
-                      <input type="text" class="form-control form-control-lg" formControlName="id"/>
+                            *ngIf="creatForm.controls.code.hasError('pattern') && creatForm.controls.code.touched "> Mã khách hàng phải đúng định dạng!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="code"/>
                     </div>
+                  </div>
+                  <div>
                     <div class="form-outline mb-4">
                       <span for="name">Tên khách hàng: </span>
                       <span style="color: red"
                             *ngIf="creatForm.controls.name.hasError('required') && creatForm.controls.name.touched && creatForm.controls.name.dirty">Tên khách hàng không được để trống!</span>
                       <span style="color: red"
-                            *ngIf="creatForm.controls.name.hasError('pattern') && creatForm.controls.name.touched && creatForm.controls.name.dirty">Tên khách hàng không đúng định dạng </span>
+                            *ngIf="creatForm.controls.name.hasError('minLength') && creatForm.controls.name.touched && creatForm.controls.name.dirty">Tên khách hàng chứa ít nhất 5 kí tự </span>
+                      <span style="color: red"
+                            *ngIf="creatForm.controls.name.hasError('maxLength') && creatForm.controls.name.touched && creatForm.controls.name.dirty">Tên khách hàng không quá 50 kí tự </span>
                       <input type="text" class="form-control form-control-lg" formControlName="name"/>
                     </div>
+                  </div>
+                  <div>
                     <div class="form-outline mb-4">
                       <label class="form-label" for="customerType">Loại khách: </label>
                       <span style="color: red"
@@ -42,19 +46,22 @@
                       <div class="input-group">
                         <select style="height: 49px" id="customerType" class="form-select"
                                 formControlName="customerType">
-                          <option value="">Chọn loại khách hàng</option>
-                          <option [ngValue]="c.name" *ngFor="let c of customerTypeList">
+                          <option [ngValue]="c" *ngFor="let c of customerType ">
                             {{c.name}}
                           </option>
                         </select>
                       </div>
                     </div>
+                  </div>
+                  <div>
                     <div class="col-lg-6">
                       <label class="form-label" for="form3Example4cg">Ngày sinh: </label>
                       <div class="form-outline mb-4">
                         <input type="date" id="form3Example4cg" class="form-control form-control-lg" formControlName="dateOfBirth"/>
                       </div>
                     </div>
+                  </div>
+                  <div>
                     <div class="form-outline mb-4">
                       <span class="form-label">Số CMND: </span>
                       <span style="color: red"
@@ -63,6 +70,15 @@
                             *ngIf="creatForm.controls.idCard.hasError('pattern') && creatForm.controls.idCard.touched &&creatForm.controls.idCard.dirty ">Số CMND không đúgn địng dạng!</span>
                       <input type="text" class="form-control form-control-lg" formControlName="idCard"/>
                     </div>
+                  </div>
+                  <div>
+                    <div class="form-outline mb-4">
+                      <span class="form-label">Giới tính: </span>
+                      <select formControlName="gender">
+                        <option [ngValue]="true" >Nam</option>
+                        <option [ngValue]="false">Nữ</option>
+                      </select>
+                  </div>
                     <div>
                       <span class="form-label">Số điện thoại: </span>
                       <span style="color: red"

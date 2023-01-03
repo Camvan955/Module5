@@ -10,17 +10,18 @@ export class ProduceService {
 
   constructor(private httpClient: HttpClient) {
   }
-
+API_URL= 'http://localhost:3000/product';
   getAll(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>('http://localhost:3000/product');
+    return this.httpClient.get<Product[]>(this.API_URL);
   }
 
-  // saveProduce(product: Product) {
-  //   this.products.push(product);
-  // }
+  saveProduce(product: Product) {
+   // @ts-ignore
+    return this.httpClient.post<Product>('http://localhost:3000/product',product);
+  }
   //
   // updateById(product:Product){
-  //   let length = this.products.length;
+  //   let length = this.products.length;;
   //   for (let i = 0; i < length; i++) {
   //     if (this.products[i].id == product.id){
   //       this.products[i] = product;

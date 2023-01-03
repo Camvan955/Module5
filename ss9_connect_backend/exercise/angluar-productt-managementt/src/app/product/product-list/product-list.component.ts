@@ -12,9 +12,11 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
 
   constructor(private produceService: ProduceService) {
-    this.produceService.getAll().subscribe(data=>{
+    this.produceService.getAll().subscribe(data => {
       this.products = data;
-    },error => {}, ()=>{})
+    }, error => {
+    }, () => {
+    });
 
   }
 
@@ -22,14 +24,15 @@ export class ProductListComponent implements OnInit {
 
   }
 
-
   editProduct() {
-
   }
 
   reload() {
-    this.produceService.getAll().subscribe(data=>{
+    this.produceService.getAll().subscribe(data => {
+      console.log(data);
       this.products = data;
-    },error => {}, ()=>{})
+    }, error => {
+    }, () => {
+    });
   }
 }
