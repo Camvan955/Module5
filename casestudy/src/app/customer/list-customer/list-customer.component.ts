@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../customer';
 import {CustomerService} from '../customer.service';
+import {FormControl, FormGroup} from '@angular/forms';
 
 
 @Component({
@@ -10,10 +11,14 @@ import {CustomerService} from '../customer.service';
 })
 export class ListCustomerComponent implements OnInit {
   customers: Customer[] = [];
-  temp: Customer={name: ''};
+  temp: Customer = {name: ''};
+  p = 1;
+  customerSearch: FormGroup = new FormGroup({
+    name: new FormControl()
+  });
 
   constructor(private customerService: CustomerService) {
-    this.customerService.getAllCustomer().subscribe(data => {
+    this.customerService.getAllCustomer(this.customerSearch.value.name).subscribe(data => {
       this.customers = data;
     }, error => {
     }, () => {
@@ -23,13 +28,20 @@ export class ListCustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getAll(){
-    this.customerService.getAllCustomer().subscribe(customer => {
-      this.customers = customer
+  getAll() {
+
+    this.customerService.getAllCustomer(this.customerSearch.value.name).subscribe(customer => {
+      this.customers = customer;
     });
   }
 
-  reload(){
-    this.getAll()
+  reload() {
+    this.getAll();
+  }
+
+  search() {
+    this.customerService.getAllCustomer(this.customerSearch.value.name).subscribe(data => {
+      this.customers = data;
+    });
   }
 }

@@ -14,8 +14,11 @@ export class CustomerService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllCustomer(): Observable<Customer[]> {
-    return this.httpClient.get<Customer[]>(this.CUSTOMER_URL);
+  getAllCustomer(value: string): Observable<Customer[]> {
+    if(value == null){
+      return this.httpClient.get<Customer[]>(this.CUSTOMER_URL);
+    }
+    return this.httpClient.get<Customer[]>(`${(this.CUSTOMER_URL)}?name_like=${value}`);
   }
 
   getAllCustomerType(): Observable<CustomerType[]> {

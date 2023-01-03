@@ -18,6 +18,7 @@ import {ListCustomerComponent} from './customer/list-customer/list-customer.comp
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {DeleteCustomerComponent} from './customer/delete-customer/delete-customer.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {DeleteCustomerComponent} from './customer/delete-customer/delete-custome
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

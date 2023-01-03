@@ -149,17 +149,18 @@
       "id": 10,
       "customerCode": "KH-1111",
       "customerType": {
-        "id": 3,
-        "name": "Gold"
+        "id": 1,
+        "name": "Diamond"
       },
-      "name": "Nguyễn Tâm Đắc",
+      "name": "Lê Bảo Khánh",
       "dateOfBirth": "1989-07-01",
       "idCard": "344343432",
       "phoneNumber": "0987654321",
       "gender": true,
-      "email": "dactam@gmail.com",
+      "email": "khanhkhung@gmail.com",
       "address": "22 Ngô Quyền, Đà Nẵng",
-      "flagDelete": false
+      "flagDelete": false,
+      "code": "KH-6868"
     }
   ],
   "facility": [
