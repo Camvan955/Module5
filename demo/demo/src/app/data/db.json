@@ -1,0 +1,100 @@
+{
+  "loaiThue": [
+    {
+      "id": 1,
+      "ten": "theo tháng"
+    },
+    {
+      "id": 2,
+      "ten": "theo quý"
+    },
+    {
+      "id": 3,
+      "ten": "theo năm"
+    }
+  ],
+  "phongtro": [
+    {
+      "id": 2,
+      "code": "PT-002",
+      "nguoiThue": "Nguyễn Minh Ánh",
+      "soDienThoai": "0986868686",
+      "ngayThue": "2023-01-01",
+      "loaiThue": {
+        "id": 3,
+        "ten": "theo năm"
+      },
+      "gia": 2500000
+    },
+    {
+      "id": 3,
+      "code": "PT-003",
+      "nguoiThue": "Nguyễn Hồng Giang",
+      "soDienThoai": "0935123123",
+      "ngayThue": "2023-01-02",
+      "loaiThue": {
+        "id": 1,
+        "ten": "theo tháng"
+      },
+      "gia": 3000000
+    },
+    {
+      "id": 4,
+      "code": "PT-004",
+      "nguoiThue": "Nguyễn Hồng Giang",
+      "soDienThoai": "0935123123",
+      "ngayThue": "2023-01-08",
+      "loaiThue": {
+        "id": 3,
+        "ten": "theo năm"
+      },
+      "gia": 2000000
+    },
+    {
+      "code": "PT-090",
+      "nguoiThue": "Lại Văn Ngọc",
+      "soDienThoai": "092121211",
+      "ngayThue": "2023-01-05",
+      "loaiThue": {
+        "id": 1,
+        "ten": "theo tháng"
+      },
+      "gia": "121212",
+      "id": 5
+    },
+    {
+      "code": "PT-1111",
+      "nguoiThue": "Hoàng Anh Thắng",
+      "soDienThoai": "097867564",
+      "ngayThue": "2022-12-26",
+      "loaiThue": {
+        "id": 2,
+        "ten": "theo quý"
+      },
+      "gia": "121212",
+      "id": 6
+    },
+    {
+      "code": "PT-123",
+      "nguoiThue": "Hoàng Thị Ánh",
+      "soDienThoai": "09123",
+      "ngayThue": "2023-01-01",
+      "loaiThue": {
+        "id": 2,
+        "ten": "theo quý"
+      },
+      "gia": "123",
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

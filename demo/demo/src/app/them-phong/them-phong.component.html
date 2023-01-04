@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <form [formGroup]="createForm" (ngSubmit)="savePhongTro()" novalidate>
+      <h2 class="text-uppercase text-center mb-5">thêm mới phòng trọ</h2>
+      <div class="row" id="form">
+        <p>
+          <button class="btn btn-outline-success" routerLink=''>Danh sách phòng trọ</button>
+        </p>
+        <div class="col-lg-12">
+          <div class="col-lg-12 form-outline mb-4">
+            <span for="customerType">Mã phòng trọ: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.code.hasError('required') && createForm.controls.code.touched "> Mã phòng trọ không được để trống!</span>
+            <!--        <span style="color: red"-->
+            <!--              *ngIf="createForm.controls.code.hasError('pattern') && createForm.controls.code.touched "> Mã khách hàng phải đúng định dạng!</span>-->
+            <input type="text" class="form-control form-control-lg" formControlName="code"/>
+          </div>
+        </div>
+        <div>
+          <div class="form-outline mb-4">
+            <span for="name">Tên khách thuê: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.nguoiThue.hasError('required') && createForm.controls.nguoiThue.touched && createForm.controls.nguoiThue.dirty">Tên khách thuê không được để trống!</span>
+            <input type="text" class="form-control form-control-lg" formControlName="nguoiThue"/>
+          </div>
+        </div>
+        <div>
+          <div class="form-outline mb-4">
+            <span for="soDienThoai">Số điện thoại: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.soDienThoai.hasError('required') && createForm.controls.soDienThoai.touched && createForm.controls.soDienThoai.dirty">Số điện thoại không được để trống!</span>
+            <input type="text" class="form-control form-control-lg" formControlName="soDienThoai"/>
+          </div>
+        </div>
+        <div>
+          <div class="form-outline mb-4">
+            <span for="ngayThue">Ngày thuê: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.ngayThue.hasError('required') && createForm.controls.ngayThue.touched && createForm.controls.ngayThue.dirty">Ngày thuê không được để trống!</span>
+            <input type="date" class="form-control form-control-lg" formControlName="ngayThue"/>
+          </div>
+        </div>
+        <div>
+          <div class="form-outline mb-4">
+            <span for="ngayThue">Loại thuê: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.loaiThue.hasError('required') && createForm.controls.loaiThue.touched">Vui lòng chọn loại thuê</span>
+            <div class="input-group">
+              <select style="height: 49px" id="loaiThue" class="form-select"
+                      formControlName="loaiThue">
+                <option [ngValue]="c" *ngFor="let c of loaiThues ">
+                  {{c.ten}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="form-outline mb-4">
+            <span for="gia">Giá thuê: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.gia.hasError('required') && createForm.controls.gia.touched && createForm.controls.gia.dirty">Giá thuê phòng không được để trống!</span>
+            <input type="text" class="form-control form-control-lg" formControlName="gia"/>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <input class="btn btn-success btn-block gradient-custom-4 text-body" type="submit"
+                 [disabled]="!createForm.valid" value="Thêm mới">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="col-3"></div>
