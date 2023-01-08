@@ -1,0 +1,61 @@
+<h3 style="text-align: center">DANH SÁCH LÔ HÀNG</h3>
+
+<div class="row" style="margin: 0">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <button class="btn btn-outline-success" routerLink="/them-moi">Thêm mới</button>
+    <div style="text-align: right">
+      <input type="text" #tenSanPham placeholder="Tên sản phẩm">
+      <input type="date" #ngayHetHan placeholder="Ngày hết hạn">
+      <button type="submit" class="btn btn-outline-success my-2 my-sm-0"
+              (click)="search(tenSanPham.value,ngayHetHan.value)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+             viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+      </button>
+    </div>
+    <table class="table table-success table-hover">
+      <thead>
+      <tr>
+        <th>Mã Lô Hàng</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá tiền</th>
+        <th>Đơn vị</th>
+        <th>Số lượng</th>
+        <th>Ngày nhập hàng</th>
+        <th>Ngày sản xuất</th>
+        <th>Ngày hết hạn</th>
+        <th colspan="2"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of loHangs |paginate: { itemsPerPage: 2, currentPage: p }; index as i">
+        <td>{{item.ma}}</td>
+        <td>{{item.sanPham?.ten}}</td>
+        <td>{{item.sanPham?.gia}}</td>
+        <td>{{item.sanPham?.donVi}}</td>
+        <td>{{item.soLuong}}</td>
+        <td>{{item.ngayNhap | date:"dd/MM/yyyy"}}</td>
+        <td>{{item.ngaySanxuat | date:"dd/MM/yyyy" }}</td>
+        <td>{{item.ngayHetHan | date:"dd/MM/yyyy"}}</td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/sua', item.id]">Sửa</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteLoHang" (click)="temp=item">
+            Xóa
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div style="text-align: right">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+  <div class=" col-md-1">
+  </div>
+</div>
+<app-xoa [loHang]="temp" (emiter)="reload()"></app-xoa>

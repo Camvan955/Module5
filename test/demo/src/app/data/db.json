@@ -1,0 +1,84 @@
+{
+  "loHang": [
+    {
+      "ma": "LH-1237",
+      "soLuong": "5",
+      "ngayNhap": "2023-01-01",
+      "ngaySanxuat": "2022-12-26",
+      "ngayHetHan": "2023-02-05",
+      "tenSanPham": {
+        "id": 1,
+        "ten": "Sting",
+        "gia": 250000,
+        "donVi": "thùng"
+      },
+      "id": 3
+    },
+    {
+      "ma": "LH-1112",
+      "soLuong": "2",
+      "ngayNhap": "2023-01-02",
+      "ngaySanxuat": "2022-12-26",
+      "ngayHetHan": "2023-02-05",
+      "tenSanPham": {
+        "id": 2,
+        "ten": "Tiger",
+        "gia": 220000,
+        "donVi": "thùng"
+      },
+      "id": 4
+    },
+    {
+      "ma": "LH-1456",
+      "soLuong": "6",
+      "ngayNhap": "2023-01-06",
+      "ngaySanxuat": "2023-01-06",
+      "ngayHetHan": "2023-01-06",
+      "tenSanPham": {
+        "id": 2,
+        "ten": "Tiger",
+        "gia": 220000,
+        "donVi": "thùng"
+      },
+      "id": 5
+    },
+    {
+      "ma": "LH-1111",
+      "soLuong": 3,
+      "ngayNhap": "2023-01-07",
+      "ngaySanxuat": "2023-01-01",
+      "ngayHetHan": "2023-02-05",
+      "tenSanPham": {
+        "id": 2,
+        "ten": "Tiger",
+        "gia": 220000,
+        "donVi": "thùng"
+      },
+      "id": 6
+    }
+  ],
+  "sanPham": [
+    {
+      "id": 1,
+      "ten": "Sting",
+      "gia": 250000,
+      "donVi": "thùng"
+    },
+    {
+      "id": 2,
+      "ten": "Tiger",
+      "gia": 220000,
+      "donVi": "thùng"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

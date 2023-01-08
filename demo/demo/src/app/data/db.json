@@ -63,18 +63,6 @@
       "id": 5
     },
     {
-      "code": "PT-1111",
-      "nguoiThue": "Hoàng Anh Thắng",
-      "soDienThoai": "097867564",
-      "ngayThue": "2022-12-26",
-      "loaiThue": {
-        "id": 2,
-        "ten": "theo quý"
-      },
-      "gia": "121212",
-      "id": 6
-    },
-    {
       "code": "PT-123",
       "nguoiThue": "Hoàng Thị Ánh",
       "soDienThoai": "09123",

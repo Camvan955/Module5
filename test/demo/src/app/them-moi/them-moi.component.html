@@ -1,0 +1,79 @@
+
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <form [formGroup]="createForm" (ngSubmit)="saveLoHang()" novalidate>
+      <h2 class="text-uppercase text-center mb-5">nhập hàng</h2>
+      <div class="row" id="form">
+        <p>
+          <button class="btn btn-outline-success" routerLink=''>Quay lại</button>
+        </p>
+        <div class="col-lg-12">
+          <div class="col-lg-12 form-outline mb-4">
+            <span for="ma">Mã lô hàng: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.ma.hasError('required') && createForm.controls.ma.touched "> Mã lô hàng không được để trống!</span>
+                    <span style="color: red"
+                          *ngIf="createForm.controls.ma.hasError('pattern') && createForm.controls.ma.touched "> Mã lô hàng phải đúng định dạng!</span>
+            <input type="text" class="form-control form-control-lg" formControlName="ma"/>
+          </div>
+        </div>
+        <div>
+          <div class="form-outline mb-4">
+            <span for="sanPham">Sản phẩm: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.sanPham.hasError('required') && createForm.controls.sanPham.touched">Vui lòng chọn sản phẩm</span>
+            <div class="input-group">
+              <select style="height: 49px" id="sanPham" class="form-select"
+                      formControlName="sanPham">
+                <option [ngValue]="c" *ngFor="let c of sanPhams ">
+                  {{c.ten}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="form-outline mb-4">
+            <span for="soLuong">Số lượng: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.soLuong.hasError('required') && createForm.controls.soLuong.touched && createForm.controls.soLuong.dirty">Số lượng không được để trống!</span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.soLuong.hasError('min') && createForm.controls.soLuong.touched && createForm.controls.soLuong.dirty">Số lượngphải là số dương!</span>
+            <input type="number" min="0" class="form-control form-control-lg" formControlName="soLuong"/>
+          </div>
+        </div>
+        <div>
+          <div class="form-outline mb-4">
+            <span for="ngayNhap">Ngày nhập hàng: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.ngayNhap.hasError('required') && createForm.controls.ngayNhap.touched && createForm.controls.ngayNhap.dirty">Ngày nhập hàng không được để trống!</span>
+            <input type="date" class="form-control form-control-lg" formControlName="ngayNhap"/>
+          </div>
+        </div>
+        <div>
+          <div class="form-outline mb-4">
+            <span for="ngaySanxuat">Ngày sản xuất: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.ngaySanxuat.hasError('required') && createForm.controls.ngaySanxuat.touched && createForm.controls.ngaySanxuat.dirty">Ngày sản xuất không được để trống!</span>
+            <input type="date" class="form-control form-control-lg" formControlName="ngaySanxuat"/>
+          </div>
+        </div>
+        <div>
+          <div class="form-outline mb-4">
+            <span for="ngayHetHan">Ngày hết hạn: </span>
+            <span style="color: red"
+                  *ngIf="createForm.controls.ngayHetHan.hasError('required') && createForm.controls.ngayHetHan.touched && createForm.controls.ngayHetHan.dirty">Ngày hết hạn không được để trống!</span>
+            <input type="date" class="form-control form-control-lg" formControlName="ngayHetHan"/>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <input class="btn btn-success btn-block gradient-custom-4 text-body" type="submit"
+                 [disabled]="!createForm.valid" value="Nhập hàng">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="col-3"></div>

@@ -3,10 +3,11 @@ import {Customer} from '../customer/customer';
 import {Facitily} from '../facility/facitily';
 
 export interface Contract {
-  id?: number;
-  idEmployee: Employee;
-  idCustomer: Customer;
-  idFacility: Facitily;
+  id: number;
+  code?: string;
+  employee: Employee;
+  customer: Customer;
+  facility: Facitily;
   dateStart?: string;
   dateEnd?: string;
   deposit?: number;

@@ -22,12 +22,12 @@
                     <div class="form-outline mb-4">
                       <span for="name">Mã hợp đồng: </span>
                       <span style="color: red"
-                            *ngIf="formContractCreate.controls.id.hasError('required') && formContractCreate.controls.id.touched "> Mã hợp đồng không được để trống!</span>
+                            *ngIf="formContractCreate.controls.code.hasError('required') && formContractCreate.controls.code.touched "> Mã hợp đồng không được để trống!</span>
                       <span style="color: red"
-                            *ngIf="formContractCreate.controls.id.hasError('pattern') && formContractCreate.controls.id.touched "> Mã hợp đồng phải đúng định dạng!</span>
-                      <input type="text" class="form-control form-control-lg" formControlName="id"/>
+                            *ngIf="formContractCreate.controls.code.hasError('pattern') && formContractCreate.controls.code.touched "> Mã hợp đồng phải đúng định dạng!</span>
+                      <input type="text" class="form-control form-control-lg" formControlName="code"/>
                     </div>
-                    <div class="form-outline mb-4">
+                    <div class="form-outline mb-4">a
                       <span for="name">Tên khách hàng: </span>
                       <input type="text" class="form-control form-control-lg" formControlName="idCustomer"/>
                     </div>

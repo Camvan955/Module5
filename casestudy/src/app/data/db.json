@@ -146,21 +146,19 @@
       "flagDelete": false
     },
     {
-      "id": 10,
-      "customerCode": "KH-1111",
+      "code": "KH-3333",
+      "name": "Van Van",
       "customerType": {
-        "id": 1,
-        "name": "Diamond"
+        "id": 3,
+        "name": "Gold"
       },
-      "name": "Lê Bảo Khánh",
-      "dateOfBirth": "1989-07-01",
-      "idCard": "344343432",
-      "phoneNumber": "0987654321",
       "gender": true,
-      "email": "khanhkhung@gmail.com",
-      "address": "22 Ngô Quyền, Đà Nẵng",
-      "flagDelete": false,
-      "code": "KH-6868"
+      "dateOfBirth": "2023-01-03",
+      "idCard": "121212121",
+      "phoneNumber": "0901111111",
+      "email": "van@gmail.com",
+      "address": "DN",
+      "id": 11
     }
   ],
   "facility": [
@@ -294,9 +292,10 @@
   "contract": [
     {
       "id": 1,
-      "startDate": "2020-12-08",
-      "endDate": "2020-12-08",
+      "dateStart": "2020-12-08",
+      "dateEnd": "2020-12-08",
       "deposit": 0,
+      "totalPay": 10000000,
       "customer": {
         "id": 1,
         "name": "Nguyễn Thị Hào"
@@ -312,9 +311,10 @@
     },
     {
       "id": 2,
-      "startDate": "2020-07-14",
-      "endDate": "2020-07-21",
+      "dateStart": "2020-07-14",
+      "dateEnd": "2020-07-21",
       "deposit": 200000,
+      "totalPay": 10000000,
       "customer": {
         "id": 3,
         "name": "Trương Định Nghệ"
@@ -330,9 +330,10 @@
     },
     {
       "id": 3,
-      "startDate": "2021-03-15",
-      "endDate": "2021-03-17",
+      "dateStart": "2021-03-15",
+      "dateEnd": "2021-03-17",
       "deposit": 50000,
+      "totalPay": 10000000,
       "customer": {
         "id": 4,
         "name": "Dương Văn Quan"
@@ -348,9 +349,10 @@
     },
     {
       "id": 4,
-      "startDate": "2021-01-14",
-      "endDate": "2021-01-18",
+      "dateStart": "2021-01-14",
+      "dateEnd": "2021-01-18",
       "deposit": 100000,
+      "totalPay": 10000000,
       "customer": {
         "id": 5,
         "name": "Hoàng Trần Nhi Nhi"
@@ -366,9 +368,10 @@
     },
     {
       "id": 5,
-      "startDate": "2021-07-14",
-      "endDate": "2021-07-15",
+      "dateStart": "2021-07-14",
+      "dateEnd": "2021-07-15",
       "deposit": 0,
+      "totalPay": 10000000,
       "customer": {
         "id": 2,
         "name": "Phạm Xuân Diệu"
@@ -384,9 +387,10 @@
     },
     {
       "id": 6,
-      "startDate": "2021-06-01",
-      "endDate": "2021-06-03",
+      "dateStart": "2021-06-01",
+      "dateEnd": "2021-06-03",
       "deposit": 0,
+      "totalPay": 10000000,
       "customer": {
         "id": 7,
         "name": "Nguyễn Mỹ Kim"
@@ -402,9 +406,10 @@
     },
     {
       "id": 7,
-      "startDate": "2021-09-02",
-      "endDate": "2021-09-05",
+      "dateStart": "2021-09-02",
+      "dateEnd": "2021-09-05",
       "deposit": 100000,
+      "totalPay": 10000000,
       "customer": {
         "id": 4,
         "name": "Dương Văn Quan"
@@ -420,9 +425,10 @@
     },
     {
       "id": 8,
-      "startDate": "2021-06-17",
-      "endDate": "2021-06-18",
+      "dateStart": "2021-06-17",
+      "dateEnd": "2021-06-18",
       "deposit": 150000,
+      "totalPay": 10000000,
       "customer": {
         "id": 4,
         "name": "Dương Văn Quan"
@@ -438,9 +444,10 @@
     },
     {
       "id": 9,
-      "startDate": "2020-11-19",
-      "endDate": "2020-11-19",
+      "dateStart": "2020-11-19",
+      "dateEnd": "2020-11-19",
       "deposit": 0,
+      "totalPay": 10000000,
       "customer": {
         "id": 4,
         "name": "Dương Văn Quan"
@@ -456,9 +463,10 @@
     },
     {
       "id": 10,
-      "startDate": "2021-04-12",
-      "endDate": "2021-04-14",
+      "dateStart": "2021-04-12",
+      "dateEnd": "2021-04-14",
       "deposit": 0,
+      "totalPay": 10000000,
       "customer": {
         "id": 3,
         "name": "Trương Định Nghệ"
@@ -474,9 +482,10 @@
     },
     {
       "id": 11,
-      "startDate": "2021-04-25",
-      "endDate": "2021-04-25",
+      "dateStart": "2021-04-25",
+      "dateEnd": "2021-04-25",
       "deposit": 0,
+      "totalPay": 10000000,
       "customer": {
         "id": 2,
         "name": "Phạm Xuân Diệu"
@@ -492,9 +501,10 @@
     },
     {
       "id": 12,
-      "startDate": "2021-05-25",
-      "endDate": "2021-05-27",
+      "dateStart": "2021-05-25",
+      "dateEnd": "2021-05-27",
       "deposit": 0,
+      "totalPay": 10000000,
       "customer": {
         "id": 10,
         "name": "Nguyễn Tâm Đắc"

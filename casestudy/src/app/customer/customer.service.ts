@@ -14,11 +14,8 @@ export class CustomerService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllCustomer(value: string): Observable<Customer[]> {
-    if(value == null){
-      return this.httpClient.get<Customer[]>(this.CUSTOMER_URL);
-    }
-    return this.httpClient.get<Customer[]>(`${(this.CUSTOMER_URL)}?name_like=${value}`);
+  getAllCustomer(name: string, email: string, phoneNumber:string): Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>('http://localhost:3000/customer?name_like=' + name + '&email_like=' + email +'&phoneNumber_like='+phoneNumber);
   }
 
   getAllCustomerType(): Observable<CustomerType[]> {
@@ -33,8 +30,8 @@ export class CustomerService {
     return this.httpClient.delete(this.CUSTOMER_URL + '/' + id);
   }
 
-  findById(id: number){
-    return this.httpClient.get(this.CUSTOMER_URL+'/'+id)
+  findById(id: number) {
+    return this.httpClient.get(this.CUSTOMER_URL + '/' + id);
   }
 
   editCustomer(customer: Customer) {
