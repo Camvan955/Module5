@@ -18,8 +18,8 @@ export class DanhSachLoHangComponent implements OnInit {
 
 
   constructor(private loHangService: LoHangService) {
-    this.loHangService.getAllLoHang(this.tenSanPham, this.ngayHetHan).subscribe(data => {
-      this.loHangs = data.content;
+    this.loHangService.getAllLoHang().subscribe(data => {
+      this.loHangs = data;
       console.log(this.loHangs);
       // console.log(data);
     }, error => {
@@ -30,18 +30,18 @@ export class DanhSachLoHangComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getAll(tenSanPham: string, ngayHetHan: string) {
-    this.loHangService.getAllLoHang(tenSanPham, ngayHetHan).subscribe(data => {
+  getAll() {
+    this.loHangService.getAllLoHang().subscribe(data => {
       this.loHangs = data;
       console.log(data);
     });
   }
 
   reload() {
-    this.getAll(this.tenSanPham, this.ngayHetHan);
+    this.getAll();
   }
 
   search(tenSanPham: string, ngayHetHan: string) {
-    this.getAll(tenSanPham, ngayHetHan);
+    this.getAll();
   }
 }

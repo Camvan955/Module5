@@ -10,14 +10,14 @@ import {Sanpham} from './sanpham';
 export class LoHangService {
 
   LO_HANG_URL = 'http://localhost:8080/lo-hangs';
-  SAN_PHAM_URL = 'http://localhost:3000/sanPham';
+  SAN_PHAM_URL = 'http://localhost:8080/san-phams';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllLoHang(tenSanPham: string, ngayHetHan: string): Observable<any> {
-    console.log(ngayHetHan);
-    return this.httpClient.get<Lohang[]>('http://localhost:8080/lo-hangs?tenSanPham.ten_like=' + tenSanPham + '&ngayHetHan_like=' + ngayHetHan);
+  getAllLoHang(): Observable<any> {
+    console.log();
+    return this.httpClient.get<Lohang[]>('http://localhost:8080/lo-hangs');
   }
 
   getAllSanPham(): Observable<Sanpham[]> {

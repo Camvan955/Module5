@@ -19,7 +19,6 @@ public class LoHang {
     private String ngayHetHan;
 
     @ManyToOne()
-    @JsonBackReference
     private SanPham sanPham;
 
     public SanPham getSanPham() {
@@ -89,7 +88,7 @@ public class LoHang {
         return ngaySanxuat;
     }
 
-    public void setNgaySanxuat(String ngaySanXuat) {
+    public void setNgaySanxuat(String ngaySanxuat) {
         this.ngaySanxuat = ngaySanxuat;
     }
 

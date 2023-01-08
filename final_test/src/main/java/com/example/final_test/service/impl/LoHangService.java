@@ -18,10 +18,10 @@ public class LoHangService implements ILoHangService {
     @Autowired
     private ILoHangRepository loHangRepository;
 
-    @Override
-    public Page<LoHang> findAll(Pageable pageable) {
-        return loHangRepository.findAll1(pageable);
-    }
+//    @Override
+//    public Page<LoHang> findAll(Pageable pageable) {
+//        return loHangRepository.findAll1(pageable);
+//    }
 
     @Override
     public void save(LoHang loHang) {
@@ -34,13 +34,18 @@ public class LoHangService implements ILoHangService {
     }
 
     @Override
-    public Optional<LoHang> findById(int id) {
-        return loHangRepository.findById(id);
+    public List<LoHang> getAll() {
+        return loHangRepository.getAllLoHang();
     }
 
     @Override
-    public List<LoHang> getAll() {
-        return loHangRepository.getAllLohang();
+    public LoHang finById(int id) {
+        return loHangRepository.findByIdLoHang(id);
+    }
+
+    @Override
+    public void remove(int id) {
+        loHangRepository.deleteById(id);
     }
 
 }

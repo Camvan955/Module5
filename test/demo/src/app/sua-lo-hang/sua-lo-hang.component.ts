@@ -32,7 +32,7 @@ export class SuaLoHangComponent implements OnInit {
       ngayNhap: new FormControl('', [Validators.required]),
       ngaySanxuat: new FormControl('', [Validators.required]),
       ngayHetHan: new FormControl('', [Validators.required]),
-      tenSanPham: new FormControl('', [Validators.required]),
+      sanPham: new FormControl('', [Validators.required]),
     });
     this.loHangService.getAllSanPham().subscribe(data => {
       this.sanPhams = data;

@@ -31,7 +31,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let item of loHangs |paginate: { itemsPerPage: 2, currentPage: p }; index as i">
+      <tr *ngFor="let item of loHangs |paginate: { itemsPerPage: 5, currentPage: p }; index as i">
         <td>{{item.ma}}</td>
         <td>{{item.sanPham?.ten}}</td>
         <td>{{item.sanPham?.gia}}</td>

@@ -27,6 +27,7 @@ export class ThemMoiComponent implements OnInit {
     });
     this.loHangService.getAllSanPham().subscribe(data => {
       this.sanPhams = data;
+      console.log(data);
     })
   }
 

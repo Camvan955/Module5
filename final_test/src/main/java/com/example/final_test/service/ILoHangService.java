@@ -10,13 +10,15 @@ import java.util.Optional;
 
 public interface ILoHangService {
 
-    Page<LoHang> findAll(Pageable pageable);
+//    Page<LoHang> findAll(Pageable pageable);
 
     void save(LoHang loHang);
 
     void update(LoHang loHang);
 
-    Optional<LoHang> findById(int id);
-
     List<LoHang> getAll();
+
+    LoHang finById(int id);
+
+    void remove(int id);
 }
